@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 
 // BINARY SEARCH TREE IMPLEMENTATION
 
@@ -77,6 +79,33 @@ class BST {
         }
     }
 
+    // display nodes levelorder
+    public void display_levelorder() {
+        levelorder(root);
+    }
+    // levelorder tree traversal
+    private void levelorder(Node x) {
+        if (x != null) {
+            Queue<Node> nodes = new LinkedList<>();
+            nodes.add(x);
+
+            while (nodes.size() > 0) {
+
+                Node temp = nodes.remove();
+                System.out.print(temp.value);
+                System.out.print(" ");
+
+                if (temp.left != null) {
+                    nodes.add(temp.left);
+                }
+
+                if (temp.right != null) {
+                    nodes.add(temp.right);
+                }
+            }
+        }
+    }
+
     // return minimum value
     public int min_val() {
         Node x = this.root;
@@ -114,6 +143,7 @@ public class bst {
         tree.insert(5);
 
         //tree.display_inorder();
+        //tree.display_levelorder();
         //System.out.println(tree.min_val());
         //System.out.println(tree.max_val());
 
