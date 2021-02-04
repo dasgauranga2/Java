@@ -24,6 +24,8 @@ public class depth_first_search {
     static int n;
     static boolean[] visited;
 
+    // DEPTH-FIRST SEARCH
+    // TIME COMPLEXITY : 0(V+E)
     public static void dfs(int i) {
         if (visited[i]) {
             return;
